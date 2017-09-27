@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CounterBook</string>
+    <string name="button_add">Add</string>
+    <string name="Counter_name">Counter name</string>
+    <string name="comment">Comment</string>
+    <string name="init">initial value</string>
+</resources>
