@@ -82,7 +82,7 @@ public class Counter implements Serializable {
     public void NewDate(){
         this.date = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        this.fdate = dateFormat.format(this.date);
+        this.fdate = dateFormat.format(this.date);  // +"nn";
     }
 
     public void new_name(String name){
@@ -91,7 +91,11 @@ public class Counter implements Serializable {
 
     public void new_init(int initial){
         this.initial = initial;
-        this.current = initial;
+        //this.current = initial;
+    }
+
+    public void new_current(int current){
+        this.current = current;
     }
 
     public void new_comment(String comment){

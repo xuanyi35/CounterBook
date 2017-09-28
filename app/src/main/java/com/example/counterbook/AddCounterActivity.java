@@ -23,7 +23,7 @@ public class AddCounterActivity extends MainActivity{
         add_name = (EditText) findViewById(R.id.name);
         add_time =(TextView) findViewById(R.id.time);
         add_init = (EditText) findViewById(R.id.initial_value);
-        add_current = (TextView) findViewById(R.id.current_value);
+        add_current = (EditText) findViewById(R.id.current_value);
         add_comment = (EditText) findViewById(R.id.comment);
 
         final Button confirmBtn = (Button) findViewById(R.id.reset);
@@ -35,6 +35,8 @@ public class AddCounterActivity extends MainActivity{
                 String name_s = add_name.getText().toString();
                 String initial_vs = add_init.getText().toString();
                 String  comment_s = add_comment.getText().toString();
+
+                String current_vs = add_current.getText().toString();
 
                 if ((add_name.length() == 0)|| initial_vs.length() == 0 ) {
                     // URL : http://developer.android.com/guide/topics/ui/dialogs.html
@@ -51,15 +53,16 @@ public class AddCounterActivity extends MainActivity{
                     builder1.show();
                 }
                 else {
-                    int initial_v=0;
+                    int initial_v=0;// current_v = 0;
                     Boolean success = true;
                     try {
                         initial_v = Integer.parseInt(initial_vs);
+                        //current_v = Integer.parseInt(current_vs);
                     } catch (Exception e){
                         success = false;
 
                     }
-                    if (initial_v <0) {
+                    if (initial_v <0 ){  //|| current_v <0) {
                         success = false;
                     }
 
@@ -68,7 +71,12 @@ public class AddCounterActivity extends MainActivity{
                         counters.add(new Counter(name_s, initial_v,comment_s));
                         adapter.notifyDataSetChanged();
                         saveInFile();
-                        Toast.makeText(getApplicationContext(), "Successfully add a counter", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Successfully add a counter"+'\n'+"current value is automatically set to be the initial value", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(), "The current value is automatically set to be the initial value", Toast.LENGTH_SHORT).show();
+                        /*if(current_v != initial_v){
+                            Toast.makeText(getApplicationContext(), "The current value is set to be the same with initial value", Toast.LENGTH_SHORT).show();
+                        }*/
+
                         //Intent intent = new Intent(AddCounterActivity.this, MainActivity.class);
                         //startActivity(intent);
                     }

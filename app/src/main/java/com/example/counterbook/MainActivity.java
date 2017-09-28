@@ -1,7 +1,9 @@
 package com.example.counterbook;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -33,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     public EditText add_name;
     public TextView add_time;
     public EditText add_init;
-    public TextView add_current;
+    public EditText add_current;
     public EditText add_comment;
 
     public static final String FILENAME = "file.sav";
@@ -132,20 +135,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public void loadFromFile() {
 
         try {
@@ -192,8 +181,6 @@ public class MainActivity extends AppCompatActivity {
             throw new RuntimeException();
         }
     }
-
-
 
 
 
