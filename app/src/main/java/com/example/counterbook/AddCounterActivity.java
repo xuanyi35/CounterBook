@@ -36,65 +36,31 @@ public class AddCounterActivity extends MainActivity{
                 String initial_vs = add_init.getText().toString();
                 String  comment_s = add_comment.getText().toString();
 
-                String current_vs = add_current.getText().toString();
-
                 if ((add_name.length() == 0)|| initial_vs.length() == 0 ) {
-                    // URL : http://developer.android.com/guide/topics/ui/dialogs.html
-                    AlertDialog.Builder builder1 = new AlertDialog.Builder(AddCounterActivity.this);
-                    builder1.setTitle("Warning")
-                            .setMessage("Need name and initial value ")
-
-                            .setNegativeButton("Continue", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    // Do nothing
-                                }
-                            });
-                    builder1.show();
+                    Toast.makeText(getApplicationContext(), "Need name and initial value", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    int initial_v=0;// current_v = 0;
+                    int initial_v=0;
                     Boolean success = true;
                     try {
                         initial_v = Integer.parseInt(initial_vs);
-                        //current_v = Integer.parseInt(current_vs);
+
                     } catch (Exception e){
                         success = false;
 
                     }
-                    if (initial_v <0 ){  //|| current_v <0) {
+                    if (initial_v <0 ){
                         success = false;
                     }
-
 
                     if (success) {
                         counters.add(new Counter(name_s, initial_v,comment_s));
                         adapter.notifyDataSetChanged();
                         saveInFile();
                         Toast.makeText(getApplicationContext(), "Successfully add a counter"+'\n'+"current value is automatically set to be the initial value", Toast.LENGTH_SHORT).show();
-                        //Toast.makeText(getApplicationContext(), "The current value is automatically set to be the initial value", Toast.LENGTH_SHORT).show();
-                        /*if(current_v != initial_v){
-                            Toast.makeText(getApplicationContext(), "The current value is set to be the same with initial value", Toast.LENGTH_SHORT).show();
-                        }*/
-
-                        //Intent intent = new Intent(AddCounterActivity.this, MainActivity.class);
-                        //startActivity(intent);
                     }
                     else{
-
-                        // URL : http://developer.android.com/guide/topics/ui/dialogs.html
-                        AlertDialog.Builder builder2 = new AlertDialog.Builder(AddCounterActivity.this);
-                        builder2.setTitle("Warning")
-                                .setMessage("Initial value should be a non-negative integer ")
-
-                                .setNegativeButton("Continue", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        // Do nothing
-                                    }
-                                });
-                        builder2.show();
-
+                        Toast.makeText(getApplicationContext(), "Initial value should be a non-negative integer", Toast.LENGTH_SHORT).show();
                     }
 
                 }

@@ -23,24 +23,12 @@ public class Counter implements Serializable {
     private String fdate;
 
     ////////////////////////////////////////////////////////////////////////////
-    public Counter (String name, int initial){
-        date = new Date();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        this.fdate = dateFormat.format(date);
-
-        this.name = name;
-        this.current = initial;
-        this.initial = initial;
-        this.comment = "";
-    }
-
 
     public Counter (String name, int initial,String comment){
 
         date = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         this.fdate = dateFormat.format(date);
-
         this.name = name;
         this.current = initial;
         this.initial = initial;
@@ -52,7 +40,6 @@ public class Counter implements Serializable {
         return name;
     }
 
-
     public String getDate(){
         return fdate;
     }
@@ -60,7 +47,6 @@ public class Counter implements Serializable {
     public int getCurrent(){
         return current;
     }
-
 
     public int getInit(){return initial;}
 
@@ -82,7 +68,7 @@ public class Counter implements Serializable {
     public void NewDate(){
         this.date = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        this.fdate = dateFormat.format(this.date);  // +"nn";
+        this.fdate = dateFormat.format(this.date) ;
     }
 
     public void new_name(String name){
@@ -91,7 +77,6 @@ public class Counter implements Serializable {
 
     public void new_init(int initial){
         this.initial = initial;
-        //this.current = initial;
     }
 
     public void new_current(int current){
