@@ -440,7 +440,7 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <string name="app_name">CounterBook</string>
+    <string name="app_name">xuanyi-CountBook</string>
     <string name="button_add">Add</string>
     <string name="comment">Comment</string>
     <string name="currrnt">Current Value</string>

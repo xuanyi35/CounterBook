@@ -28,7 +28,7 @@
         </activity>
         <activity android:name="com.example.counterbook.AddCounterActivity" />
         <activity android:name="com.example.counterbook.ViewCounterActivity" />
-        <activity android:name="com.example.counterbook.ChangeCountActivity" />
+        <activity android:name="com.example.counterbook.EditCountActivity" />
     </application>
 
 </manifest>

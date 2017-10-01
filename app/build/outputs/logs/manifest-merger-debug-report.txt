@@ -59,10 +59,10 @@ activity#com.example.counterbook.ViewCounterActivity
 ADDED from /Users/XuanyiWu/Desktop/ex/CounterBook/app/src/main/AndroidManifest.xml:20:9-57
 	android:name
 		ADDED from /Users/XuanyiWu/Desktop/ex/CounterBook/app/src/main/AndroidManifest.xml:20:19-54
-activity#com.example.counterbook.ChangeCountActivity
-ADDED from /Users/XuanyiWu/Desktop/ex/CounterBook/app/src/main/AndroidManifest.xml:21:9-57
+activity#com.example.counterbook.EditCountActivity
+ADDED from /Users/XuanyiWu/Desktop/ex/CounterBook/app/src/main/AndroidManifest.xml:21:9-55
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/ex/CounterBook/app/src/main/AndroidManifest.xml:21:19-54
+		ADDED from /Users/XuanyiWu/Desktop/ex/CounterBook/app/src/main/AndroidManifest.xml:21:19-52
 uses-sdk
 INJECTED from /Users/XuanyiWu/Desktop/ex/CounterBook/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/AndroidManifest.xml:21:5-23:78

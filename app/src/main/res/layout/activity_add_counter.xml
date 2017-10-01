@@ -51,7 +51,7 @@
 
     <EditText
         android:id="@+id/current_value"
-        android:layout_width="393dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -60,7 +60,7 @@
         android:hint="@string/currrnt"
         android:textSize="24sp"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="@+id/time"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/time"
         tools:layout_constraintLeft_creator="1"
@@ -77,16 +77,18 @@
         android:inputType="textPersonName"
         android:textSize="24sp"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="@+id/current_value"
-        app:layout_constraintRight_toRightOf="@+id/current_value"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/current_value"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp" />
 
     <EditText
         android:id="@+id/comment"
-        android:layout_width="395dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -96,8 +98,8 @@
         android:inputType="textPersonName"
         android:textSize="24sp"
         app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintLeft_toLeftOf="@+id/initial_value"
-        app:layout_constraintRight_toRightOf="@+id/initial_value"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/initial_value"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
@@ -105,19 +107,22 @@
 
     <Button
         android:id="@+id/reset"
-        android:layout_width="126dp"
-        android:layout_height="64dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginTop="98dp"
+        android:layout_width="150dp"
+        android:layout_height="66dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="120dp"
         android:text="confirm"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.97"
-        app:layout_constraintLeft_toLeftOf="@+id/comment"
-        app:layout_constraintRight_toRightOf="@+id/comment"
+        app:layout_constraintHorizontal_bias="0.901"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/comment"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintVertical_bias="0.461" />
 
 </android.support.constraint.ConstraintLayout>
 

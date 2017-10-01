@@ -1,12 +1,21 @@
+
+/*
+ * CountBook
+ *
+ * Version 1.0
+ *
+ * September 30, 2017
+ *  * Copyright (c) 2017 Team 24,CMPUT301, University of Alberta - All Rights Reserved.
+ * You mayuse,distribute, or modify thid code under terms and condition of the Code of Student Behavior at University of Alberta.
+ * You can find a copy of the license in this project. Otherwise please contact xuanyi@ualberta.ca.
+ */
+
 package com.example.counterbook;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,7 +25,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -31,6 +39,19 @@ import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
+
+/**
+ *
+ *  Show the main(summary) page
+ *
+ * @author X
+ * @version 1.5
+ * @see EditCountActivity
+ * @see AddCounterActivity
+ * @see ViewCounterActivity
+ * @since 1.0
+ *
+ */
 public class MainActivity extends AppCompatActivity {
 
     public EditText add_name;
@@ -47,6 +68,13 @@ public class MainActivity extends AppCompatActivity {
     public ArrayAdapter<Counter> adapter ;
     public int click_item_index;
 
+
+    /**
+     * Create the main page
+     *
+     * @param savedInstanceState
+     *
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         number = counters.size();
         numText = (TextView) findViewById(R.id.num);
         numText.setText("Number of counters : " + number);
-        Button addBT = (Button) findViewById(R.id.add);
+        Button addBT = (Button) findViewById(R.id.add);                                     //  click the button to go to the edit page
         addBT.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
@@ -76,7 +104,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * Start
+     *
+     */
     @Override
     protected void onStart() {
         // TODO Auto-generated method stub
@@ -88,7 +119,15 @@ public class MainActivity extends AppCompatActivity {
         numText.setText("Number of counters : " + number);
     }
 
-
+    /**
+     *
+     * Create the detail menu
+     *
+     *
+     * @param menu          contextMenu
+     * @param v             view
+     * @param menuInfo      information for menu
+     */
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v,
                                     ContextMenu.ContextMenuInfo menuInfo) {
@@ -97,13 +136,20 @@ public class MainActivity extends AppCompatActivity {
         menu.add(0, v.getId(), 0, "View details");
     }
 
+    /**
+     *  Select a particular item
+     *
+     * @param item   the item selected
+     * @return
+     *
+     */
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         int position = info.position;
         if (item.getTitle().equals("View details")) {
             Intent i = new Intent(MainActivity.this, ViewCounterActivity.class);
-            i.putExtra("MyClass", position);
+            i.putExtra("Class", position);
             startActivity(i);
         }
 
@@ -113,7 +159,10 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-
+    /**
+     *  Load from file
+     *
+     */
     public void loadFromFile() {
 
         try {
@@ -133,6 +182,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     *  Save in file
+     *
+     */
     public void saveInFile() {
         try {
             FileOutputStream fos = openFileOutput(FILENAME,
